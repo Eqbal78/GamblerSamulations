@@ -10,9 +10,21 @@ namespace GamblerSamulation
         {
             int stake = 100;
             int bet = 1;
+            int stakeValue;
 
-            Console.WriteLine("Every Day Stake is " + stake);
-            Console.WriteLine("EveryTime Bet is " + bet);
+            Random ran = new Random();
+            int toss = ran.Next(0, 2);
+            if (toss == 1)
+            {
+                stakeValue = stake + bet;
+                Console.WriteLine("Won the Game " + stakeValue);
+            }
+            else
+            {
+                stakeValue = stake - bet;
+                Console.WriteLine("Loss the Game " + stakeValue);
+            }
+            
         }
     }
 }
